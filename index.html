@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quem usa a Informação Contábil? • Multi Tech</title>
+  <meta name="description" content="Simulador educativo e interativo para aprender contabilidade na prática com a empresa fictícia Multi Tech Cursos e Treinamento – Unaí/MG." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>">
+  <meta name="theme-color" content="#6a5ae0" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo">📊</span>
+      <div class="titles">
+        <h1>Quem usa a Informação Contábil?</h1>
+        <p>Multi Tech Cursos e Treinamento – Unaí/MG</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="content">
+      <!-- Tela 1: Inicial -->
+      <div id="screen-home" class="screen active">
+        <div class="hero">
+          <h2>Entenda, na prática, como diferentes pessoas usam a contabilidade</h2>
+          <p class="lead">Informação contábil é o conjunto de dados financeiros de uma empresa (como receita, despesa e lucro) que ajuda na tomada de decisões.</p>
+        </div>
+        <section class="panel about">
+          <h3>O que é Informação Contábil?</h3>
+          
+          <p>É o “raio‑X financeiro” da empresa: mostra quanto entra (receitas), quanto sai (despesas), e qual é o resultado (lucro ou prejuízo). Também inclui dívidas, investimentos e indicadores que ajudam a avaliar desempenho e riscos.</p>
+
+          <h4>Quem usa essas informações?</h4>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
+            <div class="card">
+              <strong>Usuários internos</strong>
+              <ul>
+                <li>Gestores: decidem preços, cortes de custos e novos cursos.</li>
+                <li>Funcionários: acompanham estabilidade e crescimento.</li>
+                <li>Sócios: avaliam retorno do investimento e expansão.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Usuários externos</strong>
+              <ul>
+                <li>Investidores: analisam rentabilidade e riscos.</li>
+                <li>Bancos: verificam capacidade de pagamento.</li>
+                <li>Governo: calcula impostos e fiscaliza a atividade.</li>
+                <li>Clientes/Fornecedores/Sociedade: medem confiança e impacto.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h4>Como essas informações são usadas?</h4>
+          <ul>
+            <li><strong>Planejamento</strong>: onde aplicar recursos para crescer com segurança.</li>
+            <li><strong>Investimentos</strong>: decidir se vale lançar novos cursos ou ampliar turmas.</li>
+            <li><strong>Controle</strong>: cumprir prazos, contratos e metas financeiras.</li>
+            <li><strong>Avaliação</strong>: medir desempenho, margem de lucro e riscos.</li>
+          </ul>
+        </section>
+        <div class="cta-grid">
+          <button id="btn-interno" class="btn btn-lg btn-primary">👔 Usuário Interno</button>
+          <button id="btn-externo" class="btn btn-lg btn-secondary">🌍 Usuário Externo</button>
+        </div>
+
+        <section class="panel about">
+          <h3>Sobre a Multi Tech (Unaí/MG)</h3>
+          <p>A Multi Tech Cursos e Treinamento é uma empresa educacional fictícia sediada em Unaí/MG, focada em capacitar alunos e profissionais nas áreas de tecnologia e negócios. Seus cursos combinam prática e teoria para formar talentos preparados para o mercado local e regional.</p>
+          <ul>
+            <li><strong>Missão:</strong> promover formação de qualidade com impacto real no emprego e no desenvolvimento da comunidade.</li>
+            <li><strong>Atuação:</strong> oferta de cursos presenciais e online em TI, gestão e habilidades digitais.</li>
+            <li><strong>Impacto:</strong> quanto mais alunos e cursos, maior o alcance social e econômico em Unaí/MG.</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Tela 2: Escolha de perfil -->
+      <div id="screen-perfis" class="screen">
+        <div class="screen-header">
+          <button class="btn btn-ghost" id="back-to-home">← Voltar</button>
+          <h3 id="perfil-title">Escolha um perfil</h3>
+        </div>
+        <div class="perfil-grid" id="perfil-grid">
+          <!-- Cards de perfis inseridos via JS conforme categoria -->
+        </div>
+      </div>
+
+      <!-- Tela 3: Simulador -->
+      <div id="screen-sim" class="screen">
+        <div class="screen-header">
+          <button class="btn btn-ghost" id="back-to-perfis">← Perfis</button>
+          <h3><span id="perfil-label">Perfil</span> • Simulador Contábil</h3>
+        </div>
+
+        <div class="sim-layout">
+          <section class="panel inputs">
+            <h4>Parâmetros da Multi Tech</h4>
+            <div class="form">
+              <label>
+                <span>Receita (R$) <strong id="val-receita">R$ 50.000</strong></span>
+                <input type="range" id="input-receita" min="0" max="100000" step="500" value="50000" />
+              </label>
+              <label>
+                <span>Despesas (R$) <strong id="val-despesas">R$ 35.000</strong></span>
+                <input type="range" id="input-despesas" min="0" max="100000" step="500" value="35000" />
+              </label>
+              <label>
+                <span>Nº de alunos matriculados <strong id="val-alunos">240</strong></span>
+                <input type="range" id="input-alunos" min="0" max="1000" step="10" value="240" />
+              </label>
+              <label>
+                <span>Investimento em novos cursos (R$) <strong id="val-invest">R$ 5.000</strong></span>
+                <input type="range" id="input-invest" min="0" max="50000" step="500" value="5000" />
+              </label>
+              <div class="toggle">
+                <span>Gráfico:</span>
+                <button class="toggle-btn active" data-chart="pie">🍕 Pizza</button>
+                <button class="toggle-btn" data-chart="bar">📊 Barras</button>
+              </div>
+
+              <section class="scenarios-inline">
+                <h4>Sugestões de Simulações</h4>
+                <div class="scenario-grid">
+                  <button class="scenario-btn" data-scenario="alta-demanda">📈 Alta demanda</button>
+                  <button class="scenario-btn" data-scenario="campanha">📣 Campanha de marketing</button>
+                  <button class="scenario-btn" data-scenario="corte-custos">✂️ Corte de custos</button>
+                  <button class="scenario-btn" data-scenario="curso-premium">🎓 Novo curso premium</button>
+                  <button class="scenario-btn" data-scenario="crise">🌧️ Cenário de crise</button>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section class="panel charts">
+            <canvas id="chart" height="200"></canvas>
+            <div class="kpis">
+              <div class="kpi"><span>Receita</span><strong id="kpi-receita">R$ 50.000</strong></div>
+              <div class="kpi"><span>Despesas</span><strong id="kpi-despesas">R$ 35.000</strong></div>
+              <div class="kpi"><span>Lucro</span><strong id="kpi-lucro">R$ 15.000</strong></div>
+              <div class="kpi"><span>Margem</span><strong id="kpi-margem">30%</strong></div>
+            </div>
+          </section>
+
+          <section class="panel feedback">
+            <h4>Como este perfil interpreta os números</h4>
+            <div id="feedback-box" class="feedback-box">Selecione um perfil e ajuste os valores para ver a análise.</div>
+          </section>
+
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
